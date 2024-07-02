@@ -64,10 +64,10 @@ const assignItems = function () {
     const allGuests = document.querySelectorAll(".guest-list li");
 
     for (let guest of allGuests) {
-        const randomPotluckIndex = Math.floor(Math.random() * potluckItems.length);
-        const randomPotluckItem = potluckItems[randomPotluckIndex];
+        let randomPotluckIndex = Math.floor(Math.random() * potluckItems.length);
+        let randomPotluckItem = potluckItems[randomPotluckIndex];
 
-        const listItem = document.createElement("li");
+        let listItem = document.createElement("li");
         listItem.innerText = `${guest.innerText} is bringing ${randomPotluckItem}.`;
         assignedItems.append(listItem);
 
@@ -75,7 +75,7 @@ const assignItems = function () {
     }
 };
 
-assignButton.addEventListener = ("click", function () {
+assignButton.addEventListener("click", function () {
     assignItems();
     assignButton.disabled = true;
 });
